@@ -2,9 +2,14 @@
 // Created by dingrui on 2/1/26.
 //
 
-#include <iostream>
+#include <QApplication>
 
-int main() {
-    std::cout << "Hello World!" << std::endl;
-    return 0;
+#include "include/widget.h"
+
+int main(int argc, char *argv[]) {
+    QApplication a(argc, argv);
+    Widget w;
+    w.show();
+
+    return a.exec();
 }

@@ -7,7 +7,10 @@ file(GLOB_RECURSE HDRS
 )
 
 # 添加头文件的目的仅仅是为了让IDEA识别到 新建文件的时候添加索引
-add_library(${LIB_NAME} STATIC ${SRCS} ${HDRS})
+add_library(${LIB_NAME} STATIC
+        ${HDRS}
+        ${SRCS}
+)
 
 target_include_directories(${LIB_NAME}
     PUBLIC
@@ -25,4 +28,5 @@ target_link_libraries(${LIB_NAME}
     PUBLIC
         spdlog
         ${FFMPEG_LIBRARIES}
+        Qt${QT_VERSION_MAJOR}::Core
 )

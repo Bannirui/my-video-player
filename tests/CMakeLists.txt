@@ -22,7 +22,9 @@ foreach (TEST_SRC ${TEST_SOURCES})
     # Create executable
     add_executable(${TEST_NAME} ${TEST_SRC})
     # Link main library
-    target_link_libraries(${TEST_NAME} PRIVATE ${LIB_NAME})
+    target_link_libraries(${TEST_NAME}
+            PRIVATE ${LIB_NAME}
+    )
     # 构建时触发资源文件复制
     if (TARGET copy_assets)
         add_dependencies(${TEST_NAME} copy_assets)

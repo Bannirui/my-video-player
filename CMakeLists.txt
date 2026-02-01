@@ -47,6 +47,12 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(LIB_DIRECTORY ${CMAKE_SOURCE_DIR}/dep)
 include(${LIB_DIRECTORY}/spdlog.cmake)
 include(${LIB_DIRECTORY}/FFmpeg.cmake)
+include(${LIB_DIRECTORY}/Qt.cmake)
+
+# qt auto tools
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
 
 set(LIB_NAME "my-video-player-core")
 
