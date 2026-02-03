@@ -62,8 +62,8 @@
       "configurePreset": "mac-clang-debug"
     },
     {
-      "name": "macos-clang-release",
-      "configurePreset": "macos-clang-release"
+      "name": "mac-clang-release",
+      "configurePreset": "mac-clang-release"
     }
   ]
 }

@@ -4,7 +4,7 @@ set(ASSET_BIN_DIR "${CMAKE_CURRENT_BINARY_DIR}/asset")
 set(ASSET_RUN_DIR "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/asset")
 
 if (EXISTS "${ASSET_SRC_DIR}")
-    add_custom_target(copy_assets
+    add_custom_target(test_assets
             COMMAND ${CMAKE_COMMAND} -E copy_directory
             "${ASSET_SRC_DIR}" "${ASSET_BIN_DIR}"
             COMMAND ${CMAKE_COMMAND} -E copy_directory
@@ -26,8 +26,8 @@ foreach (TEST_SRC ${TEST_SOURCES})
             PRIVATE ${LIB_NAME}
     )
     # 构建时触发资源文件复制
-    if (TARGET copy_assets)
-        add_dependencies(${TEST_NAME} copy_assets)
+    if (TARGET test_assets)
+        add_dependencies(${TEST_NAME} test_assets)
     endif ()
     # Register with CTest
     add_test(NAME ${TEST_NAME}
