@@ -30,5 +30,15 @@ int main(int argc, char **argv) {
         return -1;
     }
     XLOG_INFO("open {} success", path);
+    ret = avformat_find_stream_info(context, 0);
+    // ms
+    int total = context->duration / (AV_TIME_BASE / 1000);
+    XLOG_INFO("total {}ms", total);
+    // mp4 info
+    av_dump_format(context, 0, path, 0);
+    if (context) {
+        // free the context and then assign content nullptr
+        avformat_close_input(&context);
+    }
     return 0;
 }
